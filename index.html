@@ -227,19 +227,7 @@
   </div>
   </div>
 </section>
-
-<section class="hero teaser">
-  
-</section>
-
-<section class="hero teaser">
-
-</section>
-
-<section class="hero teaser">
-  
-</section>
-<!-- Dataset -->
+<!-- End Dataset -->
 
 <!-- MoME -->
 <section class="hero is-small is-light">
@@ -268,6 +256,39 @@
   </div>
 </section>
 <!-- End MoME -->
+
+<!-- Metrics -->
+<section class="section hero is-small">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">New Metrics for HOI</h2>
+      <div class="columns is-centered">
+          <div class="column is-full">
+              <div class="content">
+                  <div class="level-set has-text-justified">
+                      <p>
+                        To accurately align human preference on the HOI video generation, we introduce two new automatic metrics, CoarseHOIScore and FineHOIScore, to assess the visual quality of interaction.
+                      <ol>
+                          <li>Prompt suite: we select the object and interaction types from a large-scale HOI detection dataset. Then, we manually filter out rare and unreasonable interactions and get a total of 306 prompts.</li>
+                          <li>CoarseHOIScore: An ideal interaction should at least involve people, objects, and corresponding actions. Therefore, we adopt a HOI detector to predict possible HOI triplets in the generated videos. </li>
+                          <li>FineHOIScore: It evaluates the details of HOIs from a pixel-level perspective, such as the presence or absence of contact between a person and an object and the stability of interactive actions. </li>
+                      </ol>
+                      </p>
+                  </div>
+                  <div class="container is-max-desktop">
+                    <div class="hero-body">
+                        <img src="static/images/table2.png" alt="Evaluation results with proposed HOIScores and VBench in HOI video generation."/>
+                    </div>
+                    <div class="level-set has-text-justified">
+                      <p>Evaluation results with proposed HOIScores and VBench in HOI video generation. Despite the recent significant attention on T2V benchmarks, systematic evaluation of these models on HOI video generation is still lacking. To solve this problem, we evaluate five popular commercial software Kling 1.5, Pika, Hailuo, Dreamina, and Gen-3, as well as five representative open-source methods including OpenSora, OpenSoraPlan, CogVideoX-2B, CogVideoX-5B, and Mochi-10B.</p>
+                    </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  </div>
+</section>
+<!-- End Metrics -->
 
 <!-- Image carousel -->
 <section class="hero is-small">
