@@ -188,9 +188,9 @@
                         To address the aforementioned challenges, we build the first large-scale and high-quality dataset for HOI video generation named <strong>HOIGen-1M</strong>.
                         It exhibits three main features: 
                       <ol>
-                          <li>Large scale: HOIGen-1M curates over 1M video clips and all videos contain manually verified HOI, which is sufficient for training T2V models. </li>
-                          <li>High quality: HOIGen-1M is strictly selected from the aspects of mete attribute, aesthetics, temporal consistency, motion difference, and MLLM assessment. </li>
-                          <li>Expressive captions: the captions in HOIGen-1M are precise because a Mixture-of-Multimodal-Experts (MoME) strategy is employed to detect and eliminate hallucinations via cross-verification among multiple MLLMs. </li>
+                          <li><strong>Large scale:</strong> HOIGen-1M curates over 1M video clips and all videos contain manually verified HOI, which is sufficient for training T2V models. </li>
+                          <li><strong>High quality:</strong> HOIGen-1M is strictly selected from the aspects of mete attribute, aesthetics, temporal consistency, motion difference, and MLLM assessment. </li>
+                          <li><strong>Expressive captions:</strong> the captions in HOIGen-1M are precise because a Mixture-of-Multimodal-Experts (MoME) strategy is employed to detect and eliminate hallucinations via cross-verification among multiple MLLMs. </li>
                       </ol>
                       </p>
                   </div>
@@ -268,9 +268,9 @@
                       <p>
                         To accurately align human preference on the HOI video generation, we introduce two new automatic metrics, CoarseHOIScore and FineHOIScore, to assess the visual quality of interaction.
                       <ol>
-                          <li>Prompt suite: we select the object and interaction types from a large-scale HOI detection dataset. Then, we manually filter out rare and unreasonable interactions and get a total of 306 prompts.</li>
-                          <li>CoarseHOIScore: An ideal interaction should at least involve people, objects, and corresponding actions. Therefore, we adopt a HOI detector to predict possible HOI triplets in the generated videos. </li>
-                          <li>FineHOIScore: It evaluates the details of HOIs from a pixel-level perspective, such as the presence or absence of contact between a person and an object and the stability of interactive actions. </li>
+                          <li><strong>Prompt suite:</strong> we select the object and interaction types from a large-scale HOI detection dataset. Then, we manually filter out rare and unreasonable interactions and get a total of 306 prompts.</li>
+                          <li><strong>CoarseHOIScore:</strong> An ideal interaction should at least involve people, objects, and corresponding actions. Therefore, we adopt a HOI detector to predict possible HOI triplets in the generated videos. </li>
+                          <li><strong>FineHOIScore:</strong> It evaluates the details of HOIs from a pixel-level perspective, such as the presence or absence of contact between a person and an object and the stability of interactive actions. </li>
                       </ol>
                       </p>
                   </div>
@@ -290,68 +290,71 @@
 </section>
 <!-- End Metrics -->
 
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
-    </div>
-  </div>
-</div>
-</div>
-</section>
-<!-- End image carousel -->
-
-
-
-
-<!-- Youtube video -->
+<!-- Experiments -->
 <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
       <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
+      <h2 class="title is-3">Effectiveness of HOIGen-1M</h2>
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           
-          <div class="publication-video">
-            <!-- Youtube embed code here -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          <div class="level-set has-text-justified">
+            <p>
+              We conduct a thorough effectiveness analysis of the proposed captioning method to demonstrate its ability to generate high-quality textual descriptions, which in turn contributes to generating videos that align with HOI.</p>
           </div>
+
+        </div>
+      </div>
+      <div class="container is-max-desktop">
+        <div class="hero-body">
+            <img src="static/images/table3.png" alt="The effect of the proposed captioning method."/>
+        </div>
+        <!-- <h2 class="level-set has-text-justified">MoME first adopts two captions and one decision expert to detect the hallucination. Then, an additional set of decision experts and caption experts is introduced to eliminate these hallucinations.</h2> -->
+      </div>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          
+          <div class="level-set has-text-justified">
+            <p>
+              We fine-tune three models on the HOIGen-1M using the LoRA mechanism. A significant increase can be observed after fine-tuning in the HOI scores of all three models, which directly demonstrates the effectiveness of HOIGen-1M in generating HOI videos.</p>
+          </div>
+
+        </div>
+      </div>
+      <div class="container is-max-desktop">
+        <div class="hero-body">
+            <img src="static/images/table4.png" alt="TThe effect of fine-tuning using HOIGen-1M."/>
+        </div>
+        <h2 class="level-set has-text-justified">The quality of the generated interactive videos significantly improves after fine-tuning the model on HOIGen-1M. Here are the video comparison results:</h2>
+      </div>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-video1">
+          <video poster="" id="video1" autoplay controls muted loop height="100%">
+            <!-- Your video file here -->
+            <source src="static/videos/carousel1.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video2">
+          <video poster="" id="video2" autoplay controls muted loop height="100%">
+            <!-- Your video file here -->
+            <source src="static/videos/carousel2.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video3">
+          <video poster="" id="video3" autoplay controls muted loop height="100%">\
+            <!-- Your video file here -->
+            <source src="static/videos/carousel3.mp4"
+            type="video/mp4">
+          </video>
         </div>
       </div>
     </div>
   </div>
 </section>
-<!-- End youtube video -->
-
+<!-- End Experiments -->
 
 <!-- Video carousel -->
 <section class="hero is-small">
@@ -385,26 +388,6 @@
   </div>
 </section>
 <!-- End video carousel -->
-
-
-
-
-
-
-<!-- Paper poster -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
-      </div>
-    </div>
-  </section>
-<!--End paper poster -->
-
 
 <!--BibTex citation -->
   <section class="section" id="BibTeX">
